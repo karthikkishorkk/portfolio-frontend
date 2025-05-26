@@ -1,7 +1,12 @@
 .footer {
-  background: #333;
-  color: white;
+  background-color: var(--primary-color); /* bright blue */
+  color: var(--secondary-color);          /* very light blue */
   text-align: center;
   padding: 1rem 0;
-  margin-top: 2rem;
+  font-size: 0.9rem;
+  font-family: var(--font-family);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
