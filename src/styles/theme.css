@@ -1,0 +1,11 @@
+/* src/styles/theme.css */
+:root {
+  --primary-color: #0d6efd; /* bright blue */
+  --primary-dark: #0a58ca; /* dark blue */
+  --secondary-color: #e7f0ff; /* very light blue */
+  --text-color: #222;
+  --background-color: #f9fbff;
+  --accent-color: #3b82f6; /* lighter blue accent */
+  --border-radius: 8px;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
