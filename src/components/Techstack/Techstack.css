@@ -1,0 +1,26 @@
+/* Techstack.css */
+.skillset-heading {
+  margin: 40px 0 20px;
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+}
+
+.tech-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #007bff; /* Blue border */
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  font-size: 3rem;
+  color: #007bff;
+  background-color: #ffffff; /* White background */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tech-icons:hover {
+  background-color: #e6f0ff; /* Light blue background on hover */
+  transform: scale(1.1);
+}
