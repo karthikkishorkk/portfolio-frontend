@@ -5,28 +5,31 @@ const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('');
 
-  const handleChange = e => {
-    setFormData({...formData, [e.target.name]: e.target.value});
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Sending...');
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(formData)
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
 
+      const data = await res.json();
+
       if (res.ok) {
-        setStatus('Message sent!');
-        setFormData({ name: '', email: '', message: '' });
+        setStatus(data.message); // Use the message from the backend
+        setFormData({ name: '', email: '', message: '' }); // Reset form
       } else {
-        setStatus('Failed to send message.');
+        setStatus(data.error || 'Failed to send message.');
       }
     } catch (err) {
+      console.error('Error sending message:', err);
       setStatus('Error sending message.');
     }
   };
